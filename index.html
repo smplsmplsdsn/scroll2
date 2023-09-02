@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>スクロールバーをカスタマイズする</title>
+    <link rel="stylesheet" href="./scroll.css">
+
+    <style>
+      .scroll__content {
+        gap: 20px;
+      }
+
+      .unit-inner {
+        width: 200px;
+        height: 150px;
+        background: #eee;
+      }
+
+      .js-scroll-1 {
+        width: 50vw;
+      }
+
+      .js-scroll-2 {
+        height: 30vh;
+        width: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>スクロールバーをカスタマイズする</h1>
+
+    <h2>横方向</h2>
+    <div class="scroll js-scroll-1">
+      <div class="scroll__outer">
+        <div class="scroll__inner">
+          <div class="scroll__content">
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>縦方向</h2>
+    <div class="scroll js-scroll-2" data-type="vertical">
+      <div class="scroll__outer">
+        <div class="scroll__inner">
+          <div class="scroll__content">
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+            <div class="unit"><div class="unit-inner"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="./scroll.js"></script>
+    <script>
+      scroll.show('.js-scroll-1', {
+        padding: 30
+      })
+
+      
+      scroll.show('.js-scroll-2', {
+        direction: 'vertical',
+        color: 'red',
+        bg: 'black',
+        size: 4,
+        bg_size: 10
+      })
+    </script>
+  </body>
+</html>

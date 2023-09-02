@@ -1,0 +1,113 @@
+@charset 'utf-8';
+
+.scroll {
+  position: relative;
+  z-index: 1;
+}
+
+.scroll[data-type="vertical"] .scroll__outer,
+.scroll[data-type="vertical"] .scroll__inner {
+  height: 100%;
+}
+
+.scroll[data-type="vertical"] .scroll__content {
+  flex-direction: column;
+}
+
+.scroll__outer {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.scroll__inner {
+  width: 100%;
+  overflow: auto;
+}
+
+.scroll__content {
+  display: flex;
+}
+
+.scroll__bar {  
+  z-index: 2;
+}
+
+.scroll__bar--horizontal {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+    
+.scroll__bar--horizontal::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: -1px;
+  box-sizing: border-box;
+  background: #eee;        
+}
+
+.scroll__bar--horizontal span {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.scroll__bar--horizontal span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  z-index: 2;        
+  width: 100%;
+  height: 2px;
+  margin-top: -1px;
+  background: #333;
+}
+  
+
+.scroll__bar--vertical {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+}
+    
+.scroll__bar--vertical::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
+  box-sizing: border-box;
+  background: #eee;        
+}
+
+.scroll__bar--vertical span {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  display: block;
+  cursor: pointer;
+}
+
+.scroll__bar--vertical span::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  z-index: 2;        
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
+  background: #333;
+}
