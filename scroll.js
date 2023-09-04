@@ -42,12 +42,6 @@ scroll.isNumber = (v = '') => {
  * @return undefined
  */
 scroll.show = (elem = '.scroll', obj = {}) => {
-  
-  // ガード（タッチデバイスか判別する）
-  if (scroll.is_touch) {
-    _elem_outer.width('').height('')
-    return false
-  }
 
   const _elem = $(elem),
         _elem_outer = $('.scroll__outer', _elem),
@@ -55,7 +49,13 @@ scroll.show = (elem = '.scroll', obj = {}) => {
         _elem_content = $('.scroll__content', _elem)
 
   let _elem_scrollbar = $('.scroll__bar', _elem)
-
+  
+  
+  // ガード（タッチデバイスか判別する）
+  if (scroll.is_touch) {
+    _elem_outer.width('').height('')
+    return false
+  }
 
   // ガード（必要な要素があるか判別する）
   if (_elem.length === 0 || _elem_outer.length === 0 || _elem_inner.length === 0 || _elem_content.length === 0) {
