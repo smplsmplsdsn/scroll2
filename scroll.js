@@ -121,6 +121,8 @@ scroll.show = (elem = '.scroll', obj = {}) => {
     return false
   }
 
+  _elem_scrollbar.show();
+
   // overflowを元に戻す
   _elem_inner.css({overflow: 'auto'})
 
